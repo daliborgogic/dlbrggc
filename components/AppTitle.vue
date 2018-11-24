@@ -17,14 +17,8 @@
 h1
   margin-top 16px
   margin-bottom 0
-  font-weight 700
-  font-size 7.61rem //4.44rem
+  font-weight 300
+  font-size rem(32px)
   line-height 0.8
-  font-family $monospace
-  text-transform uppercase
-  word-break break-all
-@media (max-width 512px)
-  h1
-    font-size 5.1rem
 </style>
 

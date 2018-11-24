@@ -19,8 +19,8 @@
 
 <template>
   <ul>
-    <nuxt-link v-for="(item, index) in posts.items" tag="li" :key="index" :to="'/blog/' + item.fields.slug">
-      <h2>{{item.fields.title}} Lorem ipsum dolor sit amet.</h2>
+    <nuxt-link v-for="(item, index) in posts.items" :key="index" :to="'/blog/' + item.fields.slug" tag="li">
+      <h2>{{ item.fields.title }}</h2>
       <time :datetime="item.sys.createdAt">{{ time(item.sys.createdAt) }}</time>
     </nuxt-link>
 

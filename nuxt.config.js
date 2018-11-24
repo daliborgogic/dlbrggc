@@ -2,6 +2,8 @@ const title = 'Dalibor Gogic - Software/Cloud Engineering and Architecture'
 const description = 'DevOops'
 
 export default {
+  modern: true,
+
   head: {
     htmlAttrs: { lang: 'en' },
     titleTemplate: `%s - ${title}`,
@@ -30,24 +32,29 @@ export default {
     ]
   },
 
+  css: ['~assets/global.styl'],
+
+  modules: ['@nuxtjs/style-resources'],
+
+  styleResources: {
+    stylus: './assets/variables.styl'
+  },
+
   build: {
     parallel: true,
     extractCSS: false,
     cssSourceMap: false,
-    styleResources: {
-      stylus: './assets/variables.styl'
-    },
-    // extend(config, ctx) {
-    //   // Run ESLint on save
-    //   if (ctx.isDev && ctx.isClient) {
-    //     config.module.rules.push({
-    //       enforce: 'pre',
-    //       test: /\.(js|vue)$/,
-    //       loader: 'eslint-loader',
-    //       exclude: /(node_modules)/
-    //     })
-    //   }
-    // }
+    extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }
+    }
   },
 
   render: {

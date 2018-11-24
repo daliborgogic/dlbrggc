@@ -2,7 +2,7 @@
   import r2 from 'r2'
 
   export default {
-    async asyncData ({ route }) {
+    async asyncData () {
       const item = await r2(`http://localhost:3001/post/`).json
       return { item }
     },

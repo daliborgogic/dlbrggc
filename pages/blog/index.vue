@@ -15,7 +15,7 @@
     },
 
     async asyncData () {
-      const posts = await r2(`http://localhost:3001/posts/`).json
+      const posts = await r2(`http://localhost:3000/posts.json`).json
       return { posts }
     }
   }
